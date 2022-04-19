@@ -13,13 +13,13 @@ export default {
     /*=============================================m_ÔÔ_m=============================================\
         Fullstory API
     \================================================================================================*/
-    identify(userId, properties) {
+    identify({ userId, properties }) {
         properties = Array.isArray(properties)
             ? properties.reduce((obj, item) => ({ ...obj, [item.key]: item.value }), {})
             : properties;
         FullStory.analytics.identify(userId, properties);
     },
-    event(event, properties) {
+    event({ event, properties }) {
         properties = Array.isArray(properties)
             ? properties.reduce((obj, item) => ({ ...obj, [item.key]: item.value }), {})
             : properties;
