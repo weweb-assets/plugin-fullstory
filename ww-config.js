@@ -14,7 +14,7 @@ export default {
             code: 'identify',
             /* wwEditor:start */
             edit: () => import('./src/components/Identify.vue'),
-            getIsValid([userId]) {
+            getIsValid({ userId }) {
                 return !!userId;
             },
             /* wwEditor:end */
@@ -24,7 +24,7 @@ export default {
             code: 'event',
             /* wwEditor:start */
             edit: () => import('./src/components/Event.vue'),
-            getIsValid([event]) {
+            getIsValid({ event }) {
                 return !!event;
             },
             /* wwEditor:end */
