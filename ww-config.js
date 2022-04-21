@@ -8,17 +8,13 @@ export default {
             },
         },
     },
-    functions: [
+    actions: [
         {
             name: 'Identify',
             code: 'identify',
-            parameters: [
-                { name: 'userId', type: 'string', optional: true },
-                { name: 'traits', type: 'array', optional: true },
-            ],
             /* wwEditor:start */
             edit: () => import('./src/components/Identify.vue'),
-            getIsValid([userId]) {
+            getIsValid({ userId }) {
                 return !!userId;
             },
             /* wwEditor:end */
@@ -26,13 +22,9 @@ export default {
         {
             name: 'Event',
             code: 'event',
-            parameters: [
-                { name: 'event', type: 'string' },
-                { name: 'properties', type: 'array', optional: true },
-            ],
             /* wwEditor:start */
             edit: () => import('./src/components/Event.vue'),
-            getIsValid([event]) {
+            getIsValid({ event }) {
                 return !!event;
             },
             /* wwEditor:end */
